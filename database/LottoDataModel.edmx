@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LottoDBModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LottoDBModelStoreContainer">
+          <EntitySet Name="Archive" EntityType="LottoDBModel.Store.Archive" store:Type="Tables" />
+          <EntitySet Name="Board" EntityType="LottoDBModel.Store.Board" store:Type="Tables" />
+          <EntitySet Name="Config" EntityType="LottoDBModel.Store.Config" store:Type="Tables" />
+          <EntitySet Name="Document" EntityType="LottoDBModel.Store.Document" store:Type="Tables" />
+          <EntitySet Name="Setting" EntityType="LottoDBModel.Store.Setting" store:Type="Tables" />
+          <EntitySet Name="Setup" EntityType="LottoDBModel.Store.Setup" store:Type="Tables" />
+          <EntitySet Name="Subscription" EntityType="LottoDBModel.Store.Subscription" store:Type="Tables" />
+          <EntitySet Name="Win" EntityType="LottoDBModel.Store.Win" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="Archive">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="game" Type="nvarchar" MaxLength="255" />
+          <Property Name="gamedate" Type="datetime" />
+          <Property Name="webpage" Type="blob" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="255" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="modifiedby" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Board">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="integer" />
+          <Property Name="scriptid" Type="integer" />
+          <Property Name="boardnr" Type="integer" />
+          <Property Name="b1" Type="integer" />
+          <Property Name="b2" Type="integer" />
+          <Property Name="b3" Type="integer" />
+          <Property Name="b4" Type="integer" />
+          <Property Name="b5" Type="integer" />
+          <Property Name="b6" Type="integer" />
+          <Property Name="active" Type="bit" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="game" Type="nvarchar" MaxLength="255" />
+          <Property Name="webpage" Type="nvarchar" MaxLength="255" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="255" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="modifiedby" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="doccatid" Type="integer" />
+          <Property Name="doctypeid" Type="integer" />
+          <Property Name="description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ext" Type="nvarchar" MaxLength="50" />
+          <Property Name="size" Type="integer" />
+          <Property Name="docfile" Type="blob" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="255" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="modifiedby" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="value" Type="nvarchar" MaxLength="5000" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="255" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="modifiedby" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Setup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="game" Type="nvarchar" MaxLength="255" />
+          <Property Name="webpage" Type="nvarchar" MaxLength="255" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="255" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="modifiedby" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Subscription">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" />
+          <Property Name="userid" Type="integer" />
+          <Property Name="scriptnr" Type="nvarchar" MaxLength="100" />
+          <Property Name="game" Type="nvarchar" MaxLength="255" />
+          <Property Name="startdate" Type="datetime" />
+          <Property Name="enddate" Type="datetime" />
+          <Property Name="numboards" Type="integer" />
+          <Property Name="inclplus" Type="bit" />
+          <Property Name="active" Type="bit" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Win">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="scriptnr" Type="nvarchar" MaxLength="255" />
+          <Property Name="scriptid" Type="integer" />
+          <Property Name="boardnr" Type="integer" />
+          <Property Name="gamedate" Type="datetime" />
+          <Property Name="game" Type="nvarchar" MaxLength="255" />
+          <Property Name="w1" Type="integer" />
+          <Property Name="w2" Type="integer" />
+          <Property Name="w3" Type="integer" />
+          <Property Name="w4" Type="integer" />
+          <Property Name="w5" Type="integer" />
+          <Property Name="w6" Type="integer" />
+          <Property Name="b" Type="integer" />
+          <Property Name="p1" Type="integer" />
+          <Property Name="p2" Type="integer" />
+          <Property Name="p3" Type="integer" />
+          <Property Name="p4" Type="integer" />
+          <Property Name="p5" Type="integer" />
+          <Property Name="p6" Type="integer" />
+          <Property Name="division" Type="nvarchar" MaxLength="255" />
+          <Property Name="earning" Type="float" />
+          <Property Name="webimage" Type="blob" />
+          <Property Name="active" Type="bit" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="255" />
+          <Property Name="modifiedby" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LottoDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LottoDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Archives" EntityType="LottoDBModel.Archive" />
+          <EntitySet Name="Boards" EntityType="LottoDBModel.Board" />
+          <EntitySet Name="Setups" EntityType="LottoDBModel.Setup" />
+          <EntitySet Name="Subscriptions" EntityType="LottoDBModel.Subscription" />
+          <EntitySet Name="Wins" EntityType="LottoDBModel.Win" />
+          <EntitySet Name="Configs" EntityType="LottoDBModel.Config" />
+          <EntitySet Name="Settings" EntityType="LottoDBModel.Setting" />
+          <EntitySet Name="Documents" EntityType="LottoDBModel.Document" />
+        </EntityContainer>
+        <EntityType Name="Archive">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="game" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="gamedate" Type="DateTime" />
+          <Property Name="webpage" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <Property Name="createdon" Type="DateTime" />
+          <Property Name="createdby" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="modifiedon" Type="DateTime" />
+          <Property Name="modifiedby" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Board">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int64" />
+          <Property Name="scriptid" Type="Int64" />
+          <Property Name="boardnr" Type="Int64" />
+          <Property Name="b1" Type="Int64" />
+          <Property Name="b2" Type="Int64" />
+          <Property Name="b3" Type="Int64" />
+          <Property Name="b4" Type="Int64" />
+          <Property Name="b5" Type="Int64" />
+          <Property Name="b6" Type="Int64" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="createdon" Type="DateTime" />
+          <Property Name="modifiedon" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Setup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="game" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="webpage" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="createdon" Type="DateTime" />
+          <Property Name="createdby" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="modifiedon" Type="DateTime" />
+          <Property Name="modifiedby" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Subscription">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="userid" Type="Int64" />
+          <Property Name="scriptnr" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="game" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="startdate" Type="DateTime" />
+          <Property Name="enddate" Type="DateTime" />
+          <Property Name="numboards" Type="Int64" />
+          <Property Name="inclplus" Type="Boolean" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="createdon" Type="DateTime" />
+          <Property Name="modifiedon" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Win">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="scriptnr" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="scriptid" Type="Int64" />
+          <Property Name="boardnr" Type="Int64" />
+          <Property Name="gamedate" Type="DateTime" />
+          <Property Name="game" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="w1" Type="Int64" />
+          <Property Name="w2" Type="Int64" />
+          <Property Name="w3" Type="Int64" />
+          <Property Name="w4" Type="Int64" />
+          <Property Name="w5" Type="Int64" />
+          <Property Name="w6" Type="Int64" />
+          <Property Name="b" Type="Int64" />
+          <Property Name="p1" Type="Int64" />
+          <Property Name="p2" Type="Int64" />
+          <Property Name="p3" Type="Int64" />
+          <Property Name="p4" Type="Int64" />
+          <Property Name="p5" Type="Int64" />
+          <Property Name="p6" Type="Int64" />
+          <Property Name="division" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="earning" Type="Double" />
+          <Property Name="webimage" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="createdon" Type="DateTime" />
+          <Property Name="modifiedon" Type="DateTime" />
+          <Property Type="Int64" Name="id" Nullable="false" />
+          <Property Type="String" Name="createdby" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="modifiedby" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="game" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="webpage" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="createdon" />
+          <Property Type="String" Name="createdby" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="modifiedon" />
+          <Property Type="String" Name="modifiedby" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="value" MaxLength="5000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="createdon" />
+          <Property Type="String" Name="createdby" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="modifiedon" />
+          <Property Type="String" Name="modifiedby" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="doccatid" />
+          <Property Type="Int64" Name="doctypeid" />
+          <Property Type="String" Name="description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ext" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="size" />
+          <Property Type="Binary" Name="docfile" MaxLength="2147483647" FixedLength="false" />
+          <Property Type="DateTime" Name="createdon" />
+          <Property Type="String" Name="createdby" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="modifiedon" />
+          <Property Type="String" Name="modifiedby" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LottoDBModelStoreContainer" CdmEntityContainer="LottoDBEntities">
+          <EntitySetMapping Name="Archives"><EntityTypeMapping TypeName="LottoDBModel.Archive"><MappingFragment StoreEntitySet="Archive">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="game" ColumnName="game" />
+            <ScalarProperty Name="gamedate" ColumnName="gamedate" />
+            <ScalarProperty Name="webpage" ColumnName="webpage" />
+            <ScalarProperty Name="createdon" ColumnName="createdon" />
+            <ScalarProperty Name="createdby" ColumnName="createdby" />
+            <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+            <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Boards"><EntityTypeMapping TypeName="LottoDBModel.Board"><MappingFragment StoreEntitySet="Board">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="userid" ColumnName="userid" />
+            <ScalarProperty Name="scriptid" ColumnName="scriptid" />
+            <ScalarProperty Name="boardnr" ColumnName="boardnr" />
+            <ScalarProperty Name="b1" ColumnName="b1" />
+            <ScalarProperty Name="b2" ColumnName="b2" />
+            <ScalarProperty Name="b3" ColumnName="b3" />
+            <ScalarProperty Name="b4" ColumnName="b4" />
+            <ScalarProperty Name="b5" ColumnName="b5" />
+            <ScalarProperty Name="b6" ColumnName="b6" />
+            <ScalarProperty Name="active" ColumnName="active" />
+            <ScalarProperty Name="createdon" ColumnName="createdon" />
+            <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Setups"><EntityTypeMapping TypeName="LottoDBModel.Setup"><MappingFragment StoreEntitySet="Setup">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="game" ColumnName="game" />
+            <ScalarProperty Name="webpage" ColumnName="webpage" />
+            <ScalarProperty Name="createdon" ColumnName="createdon" />
+            <ScalarProperty Name="createdby" ColumnName="createdby" />
+            <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+            <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Subscriptions"><EntityTypeMapping TypeName="LottoDBModel.Subscription"><MappingFragment StoreEntitySet="Subscription">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="userid" ColumnName="userid" />
+            <ScalarProperty Name="scriptnr" ColumnName="scriptnr" />
+            <ScalarProperty Name="game" ColumnName="game" />
+            <ScalarProperty Name="startdate" ColumnName="startdate" />
+            <ScalarProperty Name="enddate" ColumnName="enddate" />
+            <ScalarProperty Name="numboards" ColumnName="numboards" />
+            <ScalarProperty Name="inclplus" ColumnName="inclplus" />
+            <ScalarProperty Name="active" ColumnName="active" />
+            <ScalarProperty Name="createdon" ColumnName="createdon" />
+            <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Wins"><EntityTypeMapping TypeName="LottoDBModel.Win"><MappingFragment StoreEntitySet="Win">
+            <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="scriptnr" ColumnName="scriptnr" />
+            <ScalarProperty Name="scriptid" ColumnName="scriptid" />
+            <ScalarProperty Name="boardnr" ColumnName="boardnr" />
+            <ScalarProperty Name="gamedate" ColumnName="gamedate" />
+            <ScalarProperty Name="game" ColumnName="game" />
+            <ScalarProperty Name="w1" ColumnName="w1" />
+            <ScalarProperty Name="w2" ColumnName="w2" />
+            <ScalarProperty Name="w3" ColumnName="w3" />
+            <ScalarProperty Name="w4" ColumnName="w4" />
+            <ScalarProperty Name="w5" ColumnName="w5" />
+            <ScalarProperty Name="w6" ColumnName="w6" />
+            <ScalarProperty Name="b" ColumnName="b" />
+            <ScalarProperty Name="p1" ColumnName="p1" />
+            <ScalarProperty Name="p2" ColumnName="p2" />
+            <ScalarProperty Name="p3" ColumnName="p3" />
+            <ScalarProperty Name="p4" ColumnName="p4" />
+            <ScalarProperty Name="p5" ColumnName="p5" />
+            <ScalarProperty Name="p6" ColumnName="p6" />
+            <ScalarProperty Name="division" ColumnName="division" />
+            <ScalarProperty Name="earning" ColumnName="earning" />
+            <ScalarProperty Name="webimage" ColumnName="webimage" />
+            <ScalarProperty Name="active" ColumnName="active" />
+            <ScalarProperty Name="createdon" ColumnName="createdon" />
+            <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Configs">
+            <EntityTypeMapping TypeName="LottoDBModel.Config">
+              <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="webpage" ColumnName="webpage" />
+                <ScalarProperty Name="game" ColumnName="game" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="LottoDBModel.Setting">
+              <MappingFragment StoreEntitySet="Setting">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="LottoDBModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="docfile" ColumnName="docfile" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="ext" ColumnName="ext" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="doctypeid" ColumnName="doctypeid" />
+                <ScalarProperty Name="doccatid" ColumnName="doccatid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LottoDataModel">
+        <EntityTypeShape EntityType="LottoDBModel.Archive" Width="1.5" PointX="0.75" PointY="0.75" Height="2.2496956380208331" IsExpanded="true" />
+        <EntityTypeShape EntityType="LottoDBModel.Board" Width="1.5" PointX="2.75" PointY="0.75" Height="3.0714322916666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="LottoDBModel.Setup" Width="1.5" PointX="4.75" PointY="0.75" Height="2.0853483072916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="LottoDBModel.Subscription" Width="1.5" PointX="0.75" PointY="4.75" Height="2.7427376302083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="LottoDBModel.Win" Width="1.5" PointX="2.75" PointY="4.75" Height="5.0436002604166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="LottoDBModel.Config" Width="1.5" PointX="5.375" PointY="3.75" Height="2.085348307291667" />
+        <EntityTypeShape EntityType="LottoDBModel.Setting" Width="1.5" PointX="5.375" PointY="6.75" Height="2.0853483072916656" />
+        <EntityTypeShape EntityType="LottoDBModel.Document" Width="1.5" PointX="7.375" PointY="0.75" Height="2.9070849609374996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50E70BBF-8600-41EB-9BDC-9F7D1FB36254}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ttpim.gamemodule</RootNamespace>
+    <AssemblyName>Nerdi Lotto v1.0.6</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>ttpim.gamemodule.lotto.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Documents and Settings\Administrator\My Documents\DEPLOYMENTS\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>false</CreateWebPageOnPublish>
+    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8004BC80D0B6B901816F060BA2A1560E9F5255EE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Nerdi.Lotto_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lottoplayer_24.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libraries\HtmlAgilityPack.1.4.0\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinListBar.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinListView.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Designer, Version=1.0.82.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\SQLite.NET\bin\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.82.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\SQLite.NET\bin\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.82.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\SQLite.NET\bin\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Json, Version=1.0.2821.20109, Culture=neutral, PublicKeyToken=e0b9c68a59fc9efd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Net.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="common\ApplicationController.cs" />
+    <Compile Include="common\CommonWebController.cs" />
+    <Compile Include="common\GraphicsController.cs" />
+    <Compile Include="database\LottoDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LottoDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="games\controllers\common\InternetController.cs" />
+    <Compile Include="games\controllers\lotto\LottoBackgroundWorker.cs" />
+    <Compile Include="games\controllers\lotto\LottoBoardServiceManager.cs" />
+    <Compile Include="games\controllers\lotto\LottoPlusBackgroundWorker.cs" />
+    <Compile Include="games\controllers\lotto\LottoSetupServiceManager.cs" />
+    <Compile Include="games\controllers\lotto\LottoSubscriptionServiceManager.cs" />
+    <Compile Include="games\controllers\lotto\LottoWinsServiceManager.cs" />
+    <Compile Include="games\controllers\powerball\PowerballBackgroundWorker.cs" />
+    <Compile Include="games\models\lotto\DownloadEventArgs.cs" />
+    <Compile Include="games\models\lotto\ILottoBoardRepository.cs" />
+    <Compile Include="games\models\lotto\ILottoSetupDataProvider.cs" />
+    <Compile Include="games\models\lotto\ILottoSubscriptionRepository.cs" />
+    <Compile Include="games\models\lotto\ILottoWinsRepository.cs" />
+    <Compile Include="games\models\lotto\LottoBoardRepository.cs" />
+    <Compile Include="games\models\lotto\LottoCardExceptionEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoCardInProcessingEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoCardProcessedEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoCardSavedWinningsEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoDelegates.cs" />
+    <Compile Include="games\models\lotto\LottoGameBoard.cs" />
+    <Compile Include="games\models\lotto\LottoNavigationEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoPlusCardInProcessingEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoPlusParseExceptionEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoSetupDataProvider.cs" />
+    <Compile Include="games\models\lotto\LottoSubscriptionRepository.cs" />
+    <Compile Include="games\models\lotto\LottoWinEventArgs.cs" />
+    <Compile Include="games\models\lotto\LottoWinsRepository.cs" />
+    <Compile Include="games\controllers\CommonController.cs" />
+    <Compile Include="games\controllers\database\DatabaseController.cs" />
+    <Compile Include="games\models\HTMLParsedResults.cs" />
+    <Compile Include="games\models\HTMLParser.cs" />
+    <Compile Include="games\models\lotto\LottoCard.cs" />
+    <Compile Include="games\models\lotto\LottoEarnings.cs" />
+    <Compile Include="games\models\lotto\LottoGameResults.cs" />
+    <Compile Include="games\models\lotto\LottoMachine.cs" />
+    <Compile Include="games\models\lotto\LottoNumbers.cs" />
+    <Compile Include="games\models\lotto\LottoPlus.cs" />
+    <Compile Include="games\models\lotto\LottoPlusWebParser.cs" />
+    <Compile Include="games\models\lotto\LottoProcessor.cs" />
+    <Compile Include="games\models\lotto\LottoStructs.cs" />
+    <Compile Include="games\models\GameMachine.cs" />
+    <Compile Include="games\models\lotto\LottoWebParser.cs" />
+    <Compile Include="games\models\lotto\Powerball.cs" />
+    <Compile Include="games\models\lotto\WebPageSnapshotData.cs" />
+    <Compile Include="games\models\powerball\PowerballBoard.cs" />
+    <Compile Include="games\models\powerball\PowerballGameResults.cs" />
+    <Compile Include="games\models\lotto\WebProcessingData.cs" />
+    <Compile Include="games\views\DataGridViewStyles.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="games\controllers\lotto\LottoCardServiceManager.cs" />
+    <Compile Include="games\controllers\powerball\PowerballBoardServiceManager.cs" />
+    <Compile Include="games\controllers\powerball\PowerballCardServiceManager.cs" />
+    <Compile Include="games\models\GameResults.cs" />
+    <Compile Include="games\models\GameBoard.cs" />
+    <Compile Include="models\GameProcessor.cs" />
+    <Compile Include="games\models\lotto\LottoCardSlip.cs" />
+    <Compile Include="games\models\lotto\LottoEngine.cs" />
+    <Compile Include="games\models\powerball\PowerballCard.cs" />
+    <Compile Include="games\models\powerball\PowerballEngine.cs" />
+    <Compile Include="games\models\GameSubscription.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DatasourceSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatasourceSetup.Designer.cs">
+      <DependentUpon>DatasourceSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="DatasourceSetup.resx">
+      <DependentUpon>DatasourceSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="database\LottoDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LottoDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Nerdi.Lotto_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\ttpim.gamemodule.database.LottoDBEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ball_27.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="images\national_lottery.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\lotto\lottologgo.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\caution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animated_loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controllers\" />
+    <Folder Include="games\servicemanagers\" />
+    <Folder Include="powerball\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ok.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okmark.bmp" />
+    <None Include="images\Nerdi.jpg" />
+    <None Include="images\error_database_24.png" />
+    <None Include="images\h_ball2.png" />
+    <None Include="images\h_ball1.png" />
+    <EmbeddedResource Include="images\h_powerball.png" />
+    <None Include="images\h_ball3.png" />
+    <None Include="images\h_ball4.png" />
+    <None Include="images\h_ball5.png" />
+    <None Include="images\database_ok.png" />
+    <None Include="images\h_ball6.png" />
+    <None Include="images\h_bonus.png" />
+    <None Include="images\hd_ball1.png" />
+    <None Include="images\hd_ball2.png" />
+    <None Include="images\hd_ball3.png" />
+    <None Include="images\hd_ball4.png" />
+    <None Include="images\hd_ball5.png" />
+    <None Include="images\hd_powerball2.png" />
+    <None Include="images\hd_winningnumbers.png" />
+    <None Include="images\latest_blue.png" />
+    <None Include="images\latest_gray.png" />
+    <None Include="images\latest_gray2.png" />
+    <None Include="images\winningnums_3.png" />
+    <None Include="images\hd_powerball3.png" />
+    <None Include="images\connected.png" />
+    <None Include="images\getlatest_3.png" />
+    <None Include="images\workoffline3.png" />
+    <None Include="images\winnumbers4.png" />
+    <None Include="images\hd_powerball4.png" />
+    <None Include="images\hd_powerball5.png" />
+    <None Include="images\retry.png" />
+    <None Include="images\retry2.png" />
+    <None Include="images\retry4.png" />
+    <None Include="images\cancel.png" />
+    <None Include="images\greenstrip.png" />
+    <None Include="images\nointernet.png" />
+    <None Include="images\continuetowork.png" />
+    <None Include="images\hd_ball6.png" />
+    <None Include="images\hd_bonus_3.png" />
+    <None Include="images\lottoPlus_top_right_home.gif" />
+    <None Include="images\crying.png" />
+    <None Include="images\div7.png" />
+    <None Include="images\div8.png" />
+    <None Include="images\jackpot.png" />
+    <None Include="images\div1.png" />
+    <None Include="images\div2.png" />
+    <None Include="images\div3.png" />
+    <None Include="images\div4.png" />
+    <None Include="images\div5.png" />
+    <None Include="images\div6.png" />
+    <None Include="images\balloon_star.png" />
+    <None Include="images\clown_happy.png" />
+    <None Include="images\clown_unhappy.jpg" />
+    <None Include="images\coinstash.png" />
+    <None Include="images\gold-dice.jpg" />
+    <None Include="images\moneyjar.png" />
+    <None Include="images\moneystash.png" />
+    <None Include="images\messagebase.png" />
+    <None Include="images\hd_bonus4.png" />
+    <None Include="images\nointernet2.png" />
+    <None Include="images\nointernet3.png" />
+    <None Include="images\nerdgirl.jpg" />
+    <None Include="images\nerdread.jpg" />
+    <None Include="images\nerdthumbsup.jpg" />
+    <None Include="images\nerdspecs.GIF" />
+    <None Include="images\nerdi_no4.jpg" />
+    <None Include="images\nerdi_no1.jpg" />
+    <None Include="images\nerdi_no2.jpg" />
+    <None Include="images\nerdi_no3.jpg" />
+    <None Include="images\nerdi_girl2.jpg" />
+    <None Include="images\nerdi_glasses4.jpg" />
+    <None Include="images\nerdi_glasses3.jpg" />
+    <None Include="images\nerdi_glasses2.jpg" />
+    <None Include="images\nerdi_glasses5.jpg" />
+    <None Include="images\splashscreen2.jpg" />
+    <None Include="images\connected3.png" />
+    <None Include="images\connected-x.png" />
+    <None Include="images\www_3.jpg" />
+    <None Include="images\connected-y.png" />
+    <None Include="images\nerdi_boy1.jpg" />
+    <None Include="images\nerdi_girl3.jpg" />
+    <None Include="images\nerdi_girl4.jpg" />
+    <None Include="images\nerdi_girl5.jpg" />
+    <None Include="images\bonusmatch.png" />
+    <None Include="images\winboard.png" />
+    <None Include="images\winboard_32.png" />
+    <None Include="images\bonusmatch_32.png" />
+    <None Include="images\bonus_24x24.png" />
+    <None Include="images\win_24x24.png" />
+    <None Include="images\nobonus.png" />
+    <None Include="images\bonushead.png" />
+    <None Include="images\div1head.png" />
+    <None Include="images\div8head.png" />
+    <None Include="images\div7head.png" />
+    <None Include="images\div2head.png" />
+    <None Include="images\div3head.png" />
+    <None Include="images\div4head.png" />
+    <None Include="images\div5head.png" />
+    <None Include="images\div6head.png" />
+    <None Include="images\jackpothead.png" />
+    <None Include="images\youwin.png" />
+    <None Include="images\db.png" />
+    <None Include="images\okmark.png" />
+    <None Include="images\crossmark.png" />
+    <Content Include="lottoplayer_24.ico" />
+    <Content Include="Process-Info.ico" />
+    <None Include="Resources\icon.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
